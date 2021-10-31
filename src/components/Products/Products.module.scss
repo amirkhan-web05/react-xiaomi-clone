@@ -1,0 +1,9 @@
+.products_photo:hover {
+  transition: 0.3s all linear;
+
+  &:hover {
+    box-shadow: 0px 0px 18px -4px rgba(34, 60, 80, 0.27);
+    cursor: pointer;
+    transition: 0.3s all linear;
+  }
+}

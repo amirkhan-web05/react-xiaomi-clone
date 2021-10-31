@@ -1,0 +1,137 @@
+// body {
+//   background-color: #f5f5f5;
+// }
+
+.cart_content_baskett {
+  color: #424242;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 56px;
+  margin: 0 30px;
+  text-transform: uppercase;
+}
+
+.cart_content_register {
+  text-transform: uppercase;
+  margin-right: 27px;
+  color: #757575;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.cart_content_register:last-child {
+  margin: 0;
+}
+
+.info {
+  background-color: #f5f5f5;
+  padding-bottom: 5px;
+}
+
+.arrange_items {
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.arrange_remove {
+  color: #ff6700;
+  font-size: 22px;
+}
+
+.content_banner {
+  background-color: #f5f5f5;
+  height: 70vh;
+}
+
+.arrange_total_price {
+  font-size: 20px;
+  color: #ff6700;
+}
+
+.arrange_total_btn {
+  background-color: #ff6700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  justify-content: center;
+  line-height: 26px;
+  padding: 0 24px;
+  border: none;
+  margin-left: 20px;
+}
+
+.info_inner {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 20px;
+  padding: 10px 30px;
+}
+
+.info_all_item {
+  margin: 0 40px;
+  color: #b0b0b0;
+}
+
+.info_price_item {
+  margin: 0 40px;
+  color: #b0b0b0;
+}
+
+.cart_details_images {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.card_details_title {
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.card_details_price {
+  margin: 0;
+  color: #424242;
+  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.arrange {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  right: 0;
+  border: 1px solid #ccc;
+}
+
+.cart_not {
+  color: #b0b0b0;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  line-height: 24px;
+  margin: 0 auto;
+}
+
+.cart_phone {
+  background-color: #ff6700;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 26px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 140%);
+}

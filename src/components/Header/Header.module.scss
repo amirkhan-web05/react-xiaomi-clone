@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+
+  &__top {
+    background-color: #212121;
+
+    &-row {
+      display: flex;
+      align-items: center;
+      span {
+        color: #b0b0b0;
+        font-size: 12px;
+      }
+
+      hr {
+        width: 16px;
+        color: #fff;
+        transform: rotate(90deg);
+      }
+    }
+
+    &-basket {
+      margin: 0 10px;
+      filter: invert(1);
+    }
+  }
+}
