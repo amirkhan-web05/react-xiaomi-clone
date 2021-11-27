@@ -1,12 +1,21 @@
 import React from 'react'
 import styles from './Header.module.scss'
 import shoppingBasket from '../images/shopping-basket.svg'
+import {useForm} from 'react-hook-form'
 import { NavBar } from '../NavBar/NavBar'
 import { Link } from 'react-router-dom'
 import { AppContext } from '../context/context'
 
 const Header = () => {
-    const {cart} = React.useContext(AppContext)
+    const {cart, data} = React.useContext(AppContext)
+
+    const dataContext = useForm({
+        defaultValues: {
+          name:data.name,
+          surname:data.surname
+        },
+        mode:'onBlur',
+    })
 
     return (
         <header className={styles.header}>
@@ -19,6 +28,7 @@ const Header = () => {
                             <span>MI COMMUNITY</span>
                             <hr />
                             <span>ЗАГРУЗИТЬ MI STORE</span>
+                            
                         </div>
                         <div className={styles['header__top-row']}>
                             <span>ВОЙТИ</span>
@@ -29,6 +39,8 @@ const Header = () => {
                             <Link to='/cart'>
                                 <img width={20} className={styles['header__top-basket']} src={shoppingBasket} alt="" />
                             </Link>
+                            <span style={{fontSize:18}}>{data.name}</span>
+                            <span style={{fontSize:18, marginLeft:10}}>{data.surname}</span>
                         </div>
                     </div>
                 </div>

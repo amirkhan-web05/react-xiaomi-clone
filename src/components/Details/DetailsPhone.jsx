@@ -6,29 +6,29 @@ import logo from '../images/Xiaomi_logo_(2021-).svg.png'
 import Loader from '../Loader/Loader'
 import styles from './Details.module.scss'
 
-const Details = () => {
+const DetailsPhone = () => {
     const {id} = useParams()
 
-    const {phones, addCart, currencyFormat} = React.useContext(AppContext)
+    const [loading, setLoading] = React.useState(true);
+    const {phones, addCartPhone} = React.useContext(AppContext)
+
     const details = phones.filter((product) => {
         return Number(product.id) === Number(id);
     });
 
-    const [loading, setLoading] = React.useState(true)
-    const [active, setActive] = React.useState(0)
+    const [index, setIndex] = React.useState(0)
+    const [costIndex, setCostIndex] = React.useState(0)
 
     const categoryIndex = (index) => {
-        setActive(index)
+        setCostIndex(index)
     }
 
     setTimeout(() => {
         setLoading(false)
-    }, 1000)
+    }, 500)
 
-    const [index, setIndex] = React.useState(0)
-    
     return (
-        <>
+        <div>
             <div className="container">
                 <div className={'details-header d-flex justify-content-between align-items-center mt-3 mb-3'}>
                     <Link to='/'>
@@ -40,11 +40,11 @@ const Details = () => {
             <hr style={{height:2, backgroundColor:'#690000'}} />
             <div className="container">
             {details.map(item => (
-                <div className='d-flex justify-content-center align-items-center'>
+                <div key={item.id} className='d-flex justify-content-center align-items-center'>
                     {loading ? <Loader/> :  <img width={690} src={item.colors[index]} alt="" />}
                     <div className={styles.details_content}>
                         <h2 className={styles.details_content_title}>{item.title}</h2>
-                        <p className={styles.details_price}>{currencyFormat(item.price)}₽</p>
+                        <p className={styles.details_price}>{item.cost[costIndex].toLocaleString("en-de")}₽</p>
                         <div className="details-scope">
                         {<ul className={styles.details_scope_item}>
                             <li>{item.settings[0].feature.scope_1}</li>
@@ -62,30 +62,27 @@ const Details = () => {
                         <h4 className='mt-5 mb-3'>Объем памяти</h4>
                         <ul className="d-flex mb-2 mt-2">
                             {item.settings[0] ? item.settings[0].ram.map((ram, index) => (
-                                <>
-                                    <div 
-                                        onClick={() => categoryIndex(index)}
-                                        className={active === index ? styles.details_ram : styles.details_test}
-                                    >
-                                        {ram}
-                                    </div>
-                                </>
+                                <div 
+                                    key={index}
+                                    onClick={() => categoryIndex(index)}
+                                    className={costIndex === index ? styles.details_ram : styles.details_test}
+                                >
+                                    {ram}
+                                </div>
                             )) : ''}
                         </ul>
                         {item.colors && item.colors.map((images, index) => (
-                            <>
-                                <img src={images} alt='' width={150} onClick={() => setIndex(index)} style={{marginLeft:'-22px', marginRight:'22px', cursor:'pointer'}} />
-                            </>
+                            <img key={index} width={140} src={images} onClick={() => setIndex(index)} alt='' style={{marginLeft:'-22px', marginRight:'22px', cursor:'pointer'}}/>
                         ))}
-                        <Link to={`/cart`}>
-                            <button onClick={() => addCart(item.id)} style={{marginTop:'20px'}} className={styles.details_btn}>Купить</button>
+                        <Link to={`/cart/${item.id}`}>
+                            <button onClick={() => addCartPhone(item.id)} style={{marginTop:'20px'}} className={styles.details_btn}>Купить</button>
                         </Link>
                     </div>
                 </div>
             ))}
             </div>
-        </>
+        </div>
     )
 }
 
-export default Details
+export default DetailsPhone

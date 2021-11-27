@@ -1,174 +1,178 @@
-[
-    {
-        "MiDesk":[
-            {
-                "id":1,
-                "images":"https://i02.appmifile.com/740_operator_in/03/09/2021/c26809601d73e9c0e1cfdace7cfe4a7b.png?width=612&height=612"
-            },
-            {
-                "id":2,
-                "images":"https://i02.appmifile.com/930_operator_in/29/09/2021/94da33261290837fa6147b06f5e5703a.jpg?width=612&height=612"
-            },
-            {
-                "id":3,
-                "images":"https://i02.appmifile.com/878_operator_in/21/10/2021/d3d040e9f29f0f3170664b02b5c9609a.png?width=612&height=612"
-            }
-        ],
-        "phones":[
-            {
-                "id":1,
-                "title":"Xiaomi 11T Pro",
-                "price":49990,
-                "images":"https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200846.20111088.png",
-                "settings":[
-                    {
-                        "ram":["12 ГБ + 256 ГБ", "8 ГБ + 128 ГБ"],
-                        "feature": {
-                            "scope_1":"СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
-                            "scope_2":"8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
-                            "scope_3":"12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
-                        }
-                    }
-                ],
-                "colors":[
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200846.20111088.png",
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200853.54767111.png",
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200862.44652436.png"
-                ]
-            },
-            {
-                "id":2,
-                "title":"Xiaomi 11T",
-                "price":39990,
-                "images":"https://i01.appmifile.com/webfile/globalimg/chewing/K11R.png",
-                "settings":[{
-                    "ram":["12 ГБ + 256 ГБ", "8 ГБ + 128 ГБ"],
-                    "feature": {
-                        "scope_1":"СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
-                        "scope_2":"8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
-                        "scope_3":"12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
-                    }
-                }],
-                "colors":[
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200846.20111088.png",
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200853.54767111.png",
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200862.44652436.png"
-                ]
-            },
-            {
-                "id":3,
-                "title":"Mi 11 Lite",
-                "price":25990,
-                "images":"https://i01.appmifile.com/webfile/globalimg/Anna/11-lite-pink.png",
-                "settings":[{
-                    "ram":["12 ГБ + 256 ГБ", "8 ГБ + 128 ГБ"],
-                    "feature": {
-                        "scope_1":"СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
-                        "scope_2":"8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
-                        "scope_3":"12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
-                    }
-                }],
-                "colors":[
-                    "https://i01.appmifile.com/webfile/globalimg/Anna/11-lite-pink.png"
-                ]
-            },
-            {
-                "id":4,
-                "title":"POCO X3 Pro",
-                "price":20990,
-                "images":"https://i01.appmifile.com/webfile/globalimg/Anna/f3-black.png",
-                "settings":[{
-                    "ram":["12 ГБ + 256 ГБ", "8 ГБ + 128 ГБ"],
-                    "feature": {
-                        "scope_1":"СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
-                        "scope_2":"8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
-                        "scope_3":"12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
-                    }
-                }],
-                "colors":[
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1618570259.69985137.png",
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1618570268.72296931.png",
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1619090250.62567965.png"
-                ]
-            },
-            {
-                "id":5,
-                "title":"Xiaomi 11 Lite 5G NE",
-                "price":29990,
-                "images":"https://i01.appmifile.com/webfile/globalimg/xm_event/ru/e82c796537777207906b28d1f2137153.png",
-                "settings":[{
-                    "ram":["12 ГБ + 256 ГБ", "8 ГБ + 128 ГБ"],
-                    "feature": {
-                        "scope_1":"СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
-                        "scope_2":"8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
-                        "scope_3":"12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
-                    }
-                }],
-                "colors":[
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634217015.71974130.png",
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634217039.79348150.png",
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634217027.49335798.png",
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634217003.17516112.png"
-                ]
-            },
-            {
-                "id":6,
-                "title":"POCO F3",
-                "price":28990,
-                "images":"https://i01.appmifile.com/webfile/globalimg/Anna/f3-black.png",
-                "settings":[{
-                    "ram":["12 ГБ + 256 ГБ", "8 ГБ + 128 ГБ"],
-                    "feature": {
-                        "scope_1":"СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
-                        "scope_2":"8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
-                        "scope_3":"12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
-                    }
-                }],
-                "colors":[
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1618567653.21586210.png",
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1618567636.6713464.png",
-                    "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1618567644.86257500.png"
-                ]
-            }
-        ],
 
-        "MITV":[
-            {
-                "id":1,
-                "title":"Mi TV 4S 55 Inch",
-                "images":"https://i02.appmifile.com/725_operator_in/19/08/2021/9c369910a889fadd5a7f02f2140b468a.png",
-                "price":47990
-            },
-            {
-                "id":2,
-                "title":"Mi LED TV 4A 43 Inch",
-                "images":"https://i01.appmifile.com/webfile/globalimg/bao-liying/4A43.png",
-                "price":26990
-            },
-            {
-                "id":3,
-                "title":"Mi TV 4S 65 Inch",
-                "images":"https://i01.appmifile.com/webfile/globalimg/Cindy/65-800x800.png",
-                "price":64990
-            },
-            {
-                "id":4,
-                "title":"Mi TV 4S 50 Inch",
-                "images":"https://i01.appmifile.com/webfile/globalimg/Cindy/50-800x800.png",
-                "price":38990
-            },
-            {
-                "id":5,
-                "title":"Mi LED TV 4S 43",
-                "images":"https://i01.appmifile.com/webfile/globalimg/gaoruijia/43.png",
-                "price":33990
-            },
-            {
-                "id":6,
-                "title":"Mi TV Q1 75",
-                "images":"https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1623998226.75251545.png",
-                "price":149990
-            }
-        ]
-    }
-]
+    [{
+     "id": 1,
+     "title": "Xiaomi 11T Pro",
+     "price": 49990,
+     "cost": [
+      49990,
+      52000
+     ],
+     "images": "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200846.20111088.png",
+     "settings": [
+      {
+       "ram": [
+        "8 ГБ + 128 ГБ",
+        "12 ГБ + 256 ГБ"
+       ],
+       "feature": {
+        "scope_1": "СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
+        "scope_2": "8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
+        "scope_3": "12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
+       }
+      }
+     ],
+     "count": 1,
+     "colors": [
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200846.20111088.png",
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200853.54767111.png",
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200862.44652436.png"
+     ]
+    },
+    {
+     "id": 2,
+     "title": "Xiaomi 11T",
+     "price": 39990,
+     "cost": [
+      39990,
+      42000
+     ],
+     "images": "https://i01.appmifile.com/webfile/globalimg/chewing/K11R.png",
+     "settings": [
+      {
+       "ram": [
+        "8 ГБ + 128 ГБ",
+        "12 ГБ + 256 ГБ"
+       ],
+       "feature": {
+        "scope_1": "СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
+        "scope_2": "8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
+        "scope_3": "12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
+       }
+      }
+     ],
+     "count": 1,
+     "colors": [
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200846.20111088.png",
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200853.54767111.png",
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634200862.44652436.png"
+     ]
+    },
+    {
+     "id": 3,
+     "title": "Mi 11 Lite",
+     "price": 25990,
+     "cost": [
+      25990,
+      28100
+     ],
+     "images": "https://i01.appmifile.com/webfile/globalimg/Anna/11-lite-pink.png",
+     "settings": [
+      {
+       "ram": [
+        "8 ГБ + 128 ГБ",
+        "12 ГБ + 256 ГБ"
+       ],
+       "feature": {
+        "scope_1": "СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
+        "scope_2": "8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
+        "scope_3": "12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
+       }
+      }
+     ],
+     "count": 1,
+     "colors": [
+      "https://i01.appmifile.com/webfile/globalimg/Anna/11-lite-pink.png"
+     ]
+    },
+    {
+     "id": 4,
+     "title": "POCO X3 Pro",
+     "price": 20990,
+     "cost": [
+      20990,
+      24990
+     ],
+     "images": "https://i01.appmifile.com/webfile/globalimg/Anna/f3-black.png",
+     "settings": [
+      {
+       "ram": [
+        "8 ГБ + 128 ГБ",
+        "12 ГБ + 256 ГБ"
+       ],
+       "feature": {
+        "scope_1": "СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
+        "scope_2": "8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
+        "scope_3": "12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
+       }
+      }
+     ],
+     "count": 1,
+     "colors": [
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1618570259.69985137.png",
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1618570268.72296931.png",
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1619090250.62567965.png"
+     ]
+    },
+    {
+     "id": 5,
+     "title": "Xiaomi 11 Lite 5G NE",
+     "price": 29990,
+     "cost": [
+      29990,
+      33900
+     ],
+     "images": "https://i01.appmifile.com/webfile/globalimg/xm_event/ru/e82c796537777207906b28d1f2137153.png",
+     "settings": [
+      {
+       "ram": [
+        "8 ГБ + 128 ГБ",
+        "12 ГБ + 256 ГБ"
+       ],
+       "feature": {
+        "scope_1": "СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
+        "scope_2": "8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
+        "scope_3": "12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
+       }
+      }
+     ],
+     "count": 1,
+     "colors": [
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634217015.71974130.png",
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634217039.79348150.png",
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634217027.49335798.png",
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634217003.17516112.png"
+     ]
+    },
+    {
+     "id": 6,
+     "title": "POCO F3",
+     "price": 28990,
+     "cost": [
+      28990,
+      32990
+     ],
+     "images": "https://i01.appmifile.com/webfile/globalimg/Anna/f3-black.png",
+     "settings": [
+      {
+       "ram": [
+        "8 ГБ + 128 ГБ",
+        "12 ГБ + 256 ГБ"
+       ],
+       "feature": {
+        "scope_1": "СКИДКА 4000 ₽ с 22 октября по 04 ноября,Mi Smart Speaker и Mi Smart Band 6 NFC за 1 ₽",
+        "scope_2": "8 ГБ + 128 ГБ:В рассрочку за 4 166 ₽/мес. на 12 мес. или за 8 332 ₽/мес. на 6 мес.",
+        "scope_3": "12 ГБ + 256 ГБ:В рассрочку за 4 666 ₽/мес. на 12 мес. или за 9 332 ₽/мес. на 6 мес."
+       }
+      }
+     ],
+     "count": 1,
+     "colors": [
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1618567653.21586210.png",
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1618567636.6713464.png",
+      "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1618567644.86257500.png"
+     ]
+    
+   
+    }]
+
+ 

@@ -4,10 +4,12 @@ import logo from '../images/Xiaomi_logo_(2021-).svg.png'
 import styles from './NavBar.module.scss'
 
 export const NavBar = () => {
+    const [active, setActive] = React.useState(0)
+
     return (
         <nav className={'nav pt-3'}>
             <ul>
-                <li className={styles.li_item}>
+                <li>
                     <img width={50} className={styles.logo} src={logo} alt="" />
                     <NavLink to="/">Телефоны Xiaomi</NavLink>
                 </li>

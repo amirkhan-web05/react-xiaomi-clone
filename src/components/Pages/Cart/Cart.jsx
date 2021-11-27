@@ -2,15 +2,20 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../context/context';
 import logo from '../../images/Xiaomi_logo_(2021-).svg.png'
+import { Modal } from '../../Modal/Modal';
 import styles from './Cart.module.scss'
 
 const Cart = () => {
     const {
         cart, 
         currencyFormat, 
-        totalPrice, 
+        total, 
         removeItem, 
-        clearCart
+        clearCart,
+        handleChangeModal,
+        modal,
+        increase,
+        reduction
     } = React.useContext(AppContext)
 
     console.log(cart)
@@ -27,8 +32,9 @@ const Cart = () => {
                     </div>
                     <div>
                         <span className={styles.cart_content_register}>Вход</span>
-                        <span className={styles.cart_content_register}>Регистрация</span>
+                        <span onClick={handleChangeModal} className={styles.cart_content_register}>Регистрация</span>
                     </div>
+                    {modal && <Modal onClose={handleChangeModal}/>}
                 </div>
             </div>
             <hr />
@@ -46,13 +52,18 @@ const Cart = () => {
                         </div>
                     </div>
                     {cart.length ? <>
-                        {cart.map((item, index) => (
-                            <div className='mb-5'>
+                        {cart.map((item) => (
+                            <div key={item.id} className='mb-5'>
                                 <div style={{backgroundColor:'#fff'}} className='cart-details mt-5 p-4 d-flex align-items-center'>
                                     <img className={styles.cart_details_images} width={150} src={item.images} alt="" />
                                     <div className="d-flex align-items-center justify-content-between w-75">
                                         <span className={styles.card_details_title}>{item.title}</span>
-                                        <p className={styles.card_details_price}>{currencyFormat(item.price)}₽</p>
+                                        <div>
+                                            {item.count <= 2 ? <button style={{color:'#fff', fontSize:'18px'}} className='btn btn-warning' onClick={() => increase(item.id)}>+</button> : <button disabled style={{color:'#fff', fontSize:'18px'}} className='btn btn-warning' onClick={() => increase(item.id)}>+</button>}
+                                                <span style={{color:'red', margin:'0 10px', fontSize:'18px'}}>{item.count}</span>
+                                            <button style={{color:'#fff', fontSize:'18px'}} className='btn btn-warning' onClick={() => reduction(item.id)}>-</button>
+                                        </div>
+                                        <p className={styles.card_details_price}>{item.price}₽</p>
                                     </div>
                                     <span onClick={() => removeItem(item.id)} style={{display:'block', fontSize:'28px', cursor:'pointer', marginLeft:'50px'}}>&times;</span>
                                 </div>
@@ -80,7 +91,7 @@ const Cart = () => {
                         </div>
                         <div className="arrange_total d-flex">
                             <div className="arrange_total_item">
-                                <span className={styles.arrange_total_price}>Итого: {currencyFormat(totalPrice)} ₽</span>
+                                <span className={styles.arrange_total_price}>Итого: {currencyFormat(total)} ₽</span>
                                 <p>Без стоимости доставки</p>
                             </div>
                             <button className={styles.arrange_total_btn}>Оформить({cart.length})</button>

@@ -3,10 +3,10 @@ import styles from './Devices.module.scss'
 import { Link } from 'react-router-dom'
 import { AppContext } from '../context/context'
 
-const Categories = ['Телефоны', 'Mi TV']
+const Categories = ['Телефоны', 'Mi TV', 'Умные устройства']
 
 const Devices = () => {
-    const {phones, mitv} = React.useContext(AppContext)
+    const {phones, mitv, smart} = React.useContext(AppContext)
 
     const [toggle, setToggle] = React.useState(0)
 
@@ -25,7 +25,7 @@ const Devices = () => {
             <div className="devices">
                 <div className={toggle === 0 ? styles.active_content : styles.no_content}>
                     {phones.map((item) => (
-                        <Link key={item.id} to={`/phones/${item.id}`} className={styles.phones_item} key={item.id}>
+                        <Link key={item.id} to={`/devicesphone/${item.id}`} className={styles.phones_item}>
                             <img width={200} height={200} src={item.images} alt="" />
                             <h4>{item.title}</h4>
                             <p>ОТ {item.price.toLocaleString("en-de")} ₽</p>
@@ -34,7 +34,16 @@ const Devices = () => {
                 </div>
                 <div className={toggle === 1 ? styles.active_content : styles.no_content}>
                     {mitv.map((item) => (
-                        <Link key={item.id} to={`/mitv/${item.id}`} className={styles.phones_item} key={item.id}>
+                        <Link key={item.id} to={`/devicestv/${item.id}`} className={styles.phones_item}>
+                            <img width={200} height={200} src={item.images} alt="" />
+                            <h4>{item.title}</h4>
+                            <p>ОТ {item.price.toLocaleString("en-de")} ₽</p>
+                        </Link>
+                    ))}
+                </div>
+                <div className={toggle === 2 ? styles.active_content : styles.no_content}>
+                    {smart.map((item) => (
+                        <Link key={item.id} to={`/devicessmart/${item.id}`} className={styles.phones_item}>
                             <img width={200} height={200} src={item.images} alt="" />
                             <h4>{item.title}</h4>
                             <p>ОТ {item.price.toLocaleString("en-de")} ₽</p>
