@@ -10,6 +10,8 @@ export const DataProvider = ({ children }) => {
   const [smart, setSmart] = React.useState([]);
   const [modal, setModal] = React.useState(false);
   const [total, setTotal] = React.useState(0);
+  const [loader, setLoader] = React.useState(true);
+  const [inCart, setInCart] = React.useState(false);
 
   React.useEffect(() => {
     const fetchData = async () => {
@@ -32,22 +34,34 @@ export const DataProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  const addCartPhone = async (id) => {
-    const checkPhones = cart.every((item) => {
-      return item.id !== id;
-    });
+  const addCartPhone = async (obj) => {
+    try {
+      // генерирует id
+      const foundCart = cart.find((item) => Number(item.id) === Number(obj.id));
 
-    if (checkPhones) {
-      const dataPhones = phones.filter((item) => {
-        return item.id === id;
-      });
+      if (foundCart) {
+        cart.count = cart;
+      } else {
+        setCart([...cart, obj]);
+        const { data } = await axios.post(
+          'https://617d57bb1eadc50017136486.mockapi.io/cart',
+          obj
+        );
+        setCart((prev) =>
+          prev.map((item) => {
+            if (item.id === data.id) {
+              return {
+                ...item,
+                id: data.id,
+              };
+            }
 
-      axios.post(
-        'https://617d57bb1eadc50017136486.mockapi.io/cart',
-        dataPhones
-      );
-
-      setCart((prev) => [...prev, ...dataPhones]);
+            return item;
+          })
+        );
+      }
+    } catch (e) {
+      alert(e);
     }
   };
 
@@ -58,7 +72,7 @@ export const DataProvider = ({ children }) => {
       }
     });
 
-    setCart([...cart]);
+    setCart((prev) => [...prev]);
   };
 
   const reduction = (id) => {
@@ -67,36 +81,42 @@ export const DataProvider = ({ children }) => {
         item.count === 1 ? (item.count = 1) : (item.count -= 1);
       }
     });
-    setCart([...cart]);
+    setCart((prev) => [...prev]);
   };
 
-  const addCartMiTv = (id) => {
-    const checkMiTv = cart.every((item) => {
-      return item.id !== id;
-    });
-
-    if (checkMiTv) {
-      const dataMiTv = mitv.filter((item) => {
-        return item.id === id;
-      });
-
-      axios.post('https://617d57bb1eadc50017136486.mockapi.io/cart', dataMiTv);
-
-      setCart([...cart, ...dataMiTv]);
+  const addCartMiTv = async (obj) => {
+    try {
+      const foundCart = cart.find((item) => Number(item.id) === Number(obj.id));
+      if (foundCart) {
+        cart.count = cart;
+      } else {
+        const { data } = await axios.post(
+          'https://617d57bb1eadc50017136486.mockapi.io/cart',
+          obj
+        );
+        setCart((prev) => [...prev, data]);
+      }
+    } catch (e) {
+      alert(e);
     }
   };
 
-  const addCartSmart = (id) => {
-    const checkSmart = cart.every((item) => {
-      return item.id !== id;
-    });
-
-    if (checkSmart) {
-      const dataSmart = smart.filter((item) => {
-        return item.id === id;
-      });
-
-      setCart([...cart, ...dataSmart]);
+  const addCartSmart = async (obj) => {
+    try {
+      // phones === cart у них одинковые id
+      const foundCart = cart.find((item) => Number(item.id) === Number(obj.id));
+      if (foundCart) {
+        cart.count++;
+      } else {
+        const { data } = await axios.post(
+          'https://617d57bb1eadc50017136486.mockapi.io/cart',
+          obj
+        );
+        console.log(data);
+        setCart((prev) => [...prev, data]);
+      }
+    } catch (e) {
+      alert(e);
     }
   };
 
@@ -116,13 +136,21 @@ export const DataProvider = ({ children }) => {
     getTotal();
   }, [cart]);
 
-  const removeItem = (id) => {
-    if (window.confirm('Удалить товар из корзины?')) {
-      axios.delete(`https://617d57bb1eadc50017136486.mockapi.io/cart/${id}`);
-      setCart(cart.filter((item) => item.id !== id));
+  const removeItem = async (id) => {
+    try {
+      if (window.confirm('Удалить товар из корзины?')) {
+        await axios.delete(
+          `https://617d57bb1eadc50017136486.mockapi.io/cart/${id}`
+        );
+        // phones === cart у них одинковые id
+        setCart(cart.filter((item) => Number(item.id) !== Number(id)));
+        console.log(cart);
+      }
+    } catch (e) {
+      alert(e);
     }
   };
-  const clearCart = () => {
+  const clearCart = async () => {
     if (window.confirm('Очистить полностью корзину?')) {
       setCart([]);
     }
@@ -147,6 +175,8 @@ export const DataProvider = ({ children }) => {
         phones,
         data,
         setValues,
+        loader,
+        inCart,
         setPhones,
         miDesk,
         mitv,
@@ -154,6 +184,7 @@ export const DataProvider = ({ children }) => {
         setMitv,
         modal,
         setMiDesk,
+        setLoader,
         addCartMiTv,
         addCartPhone,
         smart,

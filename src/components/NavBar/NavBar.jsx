@@ -4,8 +4,6 @@ import logo from '../images/Xiaomi_logo_(2021-).svg.png'
 import styles from './NavBar.module.scss'
 
 export const NavBar = () => {
-    const [active, setActive] = React.useState(0)
-
     return (
         <nav className={'nav pt-3'}>
             <ul>

@@ -7,12 +7,12 @@ import Loader from '../Loader/Loader'
 import styles from './Details.module.scss'
 
 const Details = () => {
-    const {id} = useParams()
+    const {parentId} = useParams()
 
     const {addCartSmart, smart} = React.useContext(AppContext)
 
     const details = smart.filter((product) => {
-        return Number(product.id) === Number(id);
+        return Number(product.parentId) === Number(parentId);
     });
 
     const [loading, setLoading] = React.useState(true)
@@ -43,7 +43,9 @@ const Details = () => {
                         {item.photo ? <img width={690} src={item.photo[index]} alt="" /> : <img width={690} src={item.images} alt="" />}
                     </div>}
                     <div style={{paddingTop:200}} className={styles.details_content}>
-                        <h2 className={styles.details_content_title}>{item.title}</h2>
+                        <div>
+                            {item.nameArray ? <h2 className={styles.details_content_title}>{item.nameArray[index]}</h2> : <h2 className={styles.details_content_title}>{item.title}</h2>}
+                        </div>
                         <p className={styles.details_price}>{item.price.toLocaleString("en-de")}₽</p>
                         <div style={{borderBottom:'1px solid #ccc'}} className='d-flex align-items-center mt-3 pb-3'>
                             <div className={styles.details_balls}>
@@ -61,7 +63,7 @@ const Details = () => {
                             ))}
                         </div>}
                         <Link to={`/cart/${item.id}`}>
-                            <button onClick={() => addCartSmart(item.id)} style={{marginTop:'20px'}} className={styles.details_btn}>Купить</button>
+                            <button onClick={() => addCartSmart(item)} style={{marginTop:'20px'}} className={styles.details_btn}>Купить</button>
                         </Link>
                     </div>
                 </div>

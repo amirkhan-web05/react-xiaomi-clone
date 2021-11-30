@@ -16,15 +16,19 @@ function App() {
           <Route exact path="/" component={Home}></Route>
           <Route
             exact
-            path="/devicesphone/:id"
+            path="/devicesphone/:parentId"
             component={DetailsPhone}
           ></Route>
           <Route exact path="/cart/:id" component={Cart}></Route>
-          <Route exact path="/devicestv/:id" component={DetailsTv}></Route>
+          <Route
+            exact
+            path="/devicestv/:parentId"
+            component={DetailsTv}
+          ></Route>
           <Route exact path="/email" component={Email} />
           <Route
             exact
-            path="/devicessmart/:id"
+            path="/devicessmart/:parentId"
             component={DetailsSmart}
           ></Route>
         </Switch>

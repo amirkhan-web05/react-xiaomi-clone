@@ -7,14 +7,17 @@ import Loader from '../Loader/Loader'
 import styles from './Details.module.scss'
 
 const DetailsPhone = () => {
-    const {id} = useParams()
+    const {parentId} = useParams()
 
+    
     const [loading, setLoading] = React.useState(true);
     const {phones, addCartPhone} = React.useContext(AppContext)
-
+    
     const details = phones.filter((product) => {
-        return Number(product.id) === Number(id);
+        return Number(product.parentId) === Number(parentId);
     });
+
+    console.log(details)
 
     const [index, setIndex] = React.useState(0)
     const [costIndex, setCostIndex] = React.useState(0)
@@ -39,7 +42,7 @@ const DetailsPhone = () => {
             </div>
             <hr style={{height:2, backgroundColor:'#690000'}} />
             <div className="container">
-            {details.map(item => (
+            {details.map((item, i) => (
                 <div key={item.id} className='d-flex justify-content-center align-items-center'>
                     {loading ? <Loader/> :  <img width={690} src={item.colors[index]} alt="" />}
                     <div className={styles.details_content}>
@@ -61,7 +64,7 @@ const DetailsPhone = () => {
                         </div>
                         <h4 className='mt-5 mb-3'>Объем памяти</h4>
                         <ul className="d-flex mb-2 mt-2">
-                            {item.settings[0] ? item.settings[0].ram.map((ram, index) => (
+                            {item.settings[0].ram ? item.settings[0].ram.map((ram, index) => (
                                 <div 
                                     key={index}
                                     onClick={() => categoryIndex(index)}
@@ -75,7 +78,7 @@ const DetailsPhone = () => {
                             <img key={index} width={140} src={images} onClick={() => setIndex(index)} alt='' style={{marginLeft:'-22px', marginRight:'22px', cursor:'pointer'}}/>
                         ))}
                         <Link to={`/cart/${item.id}`}>
-                            <button onClick={() => addCartPhone(item.id)} style={{marginTop:'20px'}} className={styles.details_btn}>Купить</button>
+                             <button onClick={() => addCartPhone(item)} style={{marginTop:'20px'}} className={styles.details_btn}>Купить</button>
                         </Link>
                     </div>
                 </div>

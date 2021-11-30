@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../context/context';
 import logo from '../../images/Xiaomi_logo_(2021-).svg.png'
+import Loader from '../../Loader/Loader';
 import { Modal } from '../../Modal/Modal';
 import styles from './Cart.module.scss'
 
@@ -15,8 +16,14 @@ const Cart = () => {
         handleChangeModal,
         modal,
         increase,
-        reduction
+        reduction,
+        loader,
+        setLoader,
     } = React.useContext(AppContext)
+
+    setTimeout(() => {
+        setLoader(false)
+    }, 1000)
 
     console.log(cart)
 
@@ -52,23 +59,34 @@ const Cart = () => {
                         </div>
                     </div>
                     {cart.length ? <>
-                        {cart.map((item) => (
-                            <div key={item.id} className='mb-5'>
-                                <div style={{backgroundColor:'#fff'}} className='cart-details mt-5 p-4 d-flex align-items-center'>
-                                    <img className={styles.cart_details_images} width={150} src={item.images} alt="" />
+                        <>
+                            {loader ? <div className='mt-5 mb-5 text-center'>
+                                        <Loader/>
+                                      </div> 
+                                :
+                                <>
+                        {cart.map((item, index) => (                        
+                            <div className={styles.cart_items} key={item.id} >
+                                <div style={{backgroundColor:'#fff'}} className={styles.cart_details}>
+                                    {/* <span style={{marginRight:'15px', fontSize:'28px', color:'orange'}}>{item.id}</span> */}
+                                    <img className={styles.cart_details_images} width={150} src={item.colors[index]} alt="" />
                                     <div className="d-flex align-items-center justify-content-between w-75">
                                         <span className={styles.card_details_title}>{item.title}</span>
+                                        {/* {item.settings[0].ram[index]} */}
                                         <div>
                                             {item.count <= 2 ? <button style={{color:'#fff', fontSize:'18px'}} className='btn btn-warning' onClick={() => increase(item.id)}>+</button> : <button disabled style={{color:'#fff', fontSize:'18px'}} className='btn btn-warning' onClick={() => increase(item.id)}>+</button>}
                                                 <span style={{color:'red', margin:'0 10px', fontSize:'18px'}}>{item.count}</span>
                                             <button style={{color:'#fff', fontSize:'18px'}} className='btn btn-warning' onClick={() => reduction(item.id)}>-</button>
                                         </div>
-                                        <p className={styles.card_details_price}>{item.price}₽</p>
+                                        <p className={styles.card_details_price}>{item.price.toLocaleString("en-de")}₽</p>
                                     </div>
                                     <span onClick={() => removeItem(item.id)} style={{display:'block', fontSize:'28px', cursor:'pointer', marginLeft:'50px'}}>&times;</span>
                                 </div>
-                            </div>
+                            </div> 
                         ))}
+                                </> 
+                            }
+                        </>
                     </> : 
                         <div className={styles.content_banner}>
                             <div className='d-flex justify-content-center align-items-center mt-5'>

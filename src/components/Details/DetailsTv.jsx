@@ -7,12 +7,12 @@ import Loader from '../Loader/Loader'
 import styles from './Details.module.scss'
 
 const Details = () => {
-    const {id} = useParams()
+    const {parentId} = useParams()
 
     const {addCartMiTv, mitv} = React.useContext(AppContext)
 
     const details = mitv.filter((product) => {
-        return Number(product.id) === Number(id);
+        return Number(product.parentId) === Number(parentId);
     });
 
     const [loading, setLoading] = React.useState(true)
@@ -34,7 +34,7 @@ const Details = () => {
             <hr style={{height:2, backgroundColor:'#690000'}} />
             <div className="container">
             {details.map(item => (
-                <div className='d-flex justify-content-center'>
+                <div key={item.id} className='d-flex justify-content-center'>
                     {loading ? <Loader/> :  <img width={690} src={item.images} alt="" />}
                     <div style={{paddingTop:200}} className={styles.details_content}>
                         <h2 className={styles.details_content_title}>{item.title}</h2>
@@ -47,7 +47,7 @@ const Details = () => {
                             <div className={styles.details_bonuce}>Получите в два раза больше Mi баллов за покупку этого товара.</div>  
                         </div>
                         <Link to={`/cart/${item.id}`}>
-                            <button onClick={() => addCartMiTv(item.id)} style={{marginTop:'20px'}} className={styles.details_btn}>Купить</button>
+                            <button onClick={() => addCartMiTv(item)} style={{marginTop:'20px'}} className={styles.details_btn}>Купить</button>
                         </Link>
                     </div>
                 </div>

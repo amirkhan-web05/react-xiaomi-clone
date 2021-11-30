@@ -25,7 +25,7 @@ const Devices = () => {
             <div className="devices">
                 <div className={toggle === 0 ? styles.active_content : styles.no_content}>
                     {phones.map((item) => (
-                        <Link key={item.id} to={`/devicesphone/${item.id}`} className={styles.phones_item}>
+                        <Link key={item.id} to={`/devicesphone/${item.parentId}`} className={styles.phones_item}>
                             <img width={200} height={200} src={item.images} alt="" />
                             <h4>{item.title}</h4>
                             <p>ОТ {item.price.toLocaleString("en-de")} ₽</p>
@@ -34,7 +34,7 @@ const Devices = () => {
                 </div>
                 <div className={toggle === 1 ? styles.active_content : styles.no_content}>
                     {mitv.map((item) => (
-                        <Link key={item.id} to={`/devicestv/${item.id}`} className={styles.phones_item}>
+                        <Link key={item.id} to={`/devicestv/${item.parentId}`} className={styles.phones_item}>
                             <img width={200} height={200} src={item.images} alt="" />
                             <h4>{item.title}</h4>
                             <p>ОТ {item.price.toLocaleString("en-de")} ₽</p>
@@ -43,7 +43,7 @@ const Devices = () => {
                 </div>
                 <div className={toggle === 2 ? styles.active_content : styles.no_content}>
                     {smart.map((item) => (
-                        <Link key={item.id} to={`/devicessmart/${item.id}`} className={styles.phones_item}>
+                        <Link key={item.id} to={`/devicessmart/${item.parentId}`} className={styles.phones_item}>
                             <img width={200} height={200} src={item.images} alt="" />
                             <h4>{item.title}</h4>
                             <p>ОТ {item.price.toLocaleString("en-de")} ₽</p>
