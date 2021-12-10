@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
-import { AppContext } from '../context/context'
-import logo from '../images/Xiaomi_logo_(2021-).svg.png'
+import {AppContext} from '../../context/context'
+import logo from '../../assets/images/Xiaomi_logo_(2021-).svg.png'
 import Loader from '../Loader/Loader'
 import styles from './Details.module.scss'
 

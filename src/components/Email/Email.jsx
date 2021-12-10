@@ -1,17 +1,17 @@
 import React from 'react'
 import {useForm} from 'react-hook-form'
-import { AppContext } from '../context/context'
+import {AppContext} from '../../context/context'
 import { useHistory } from 'react-router-dom'
 import styles from './Email.module.scss'
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+// import { yupResolver } from "@hookform/resolvers/yup";
+// import * as yup from "yup";
 
-const schema = yup.object().shape({
-  email: yup
-    .string()
-    .email("Email should have correct format")
-    .required("Email is a required field"),
-});
+// const schema = yupResolver.object().shape({
+//   email: yupResolver
+//     .string()
+//     .email("Email should have correct format")
+//     .required("Email is a required field"),
+// });
 
 export const Email = () => {
   const {data, setValues} = React.useContext(AppContext)
@@ -22,7 +22,6 @@ export const Email = () => {
       email:data.email
     },
     mode:'onBlur',
-    resolver:yupResolver(schema)
   })
 
   const onSubmit = (data) => {

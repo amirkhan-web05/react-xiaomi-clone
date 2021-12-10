@@ -1,0 +1,41 @@
+.btn_slide_prev {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  display: flex;
+  left: 5%;
+  top: 40%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow {
+  width: 80px;
+  filter: invert(1);
+  transform: rotate(180deg);
+}
+
+.btn_slide_next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  right: 5%;
+  top: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.next {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-60%);
+}
+.prev {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-60%);
+}

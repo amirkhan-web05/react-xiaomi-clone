@@ -19,6 +19,7 @@ const promoPhotoes = [
 const Promo = () => {
     return (
         <div className='container'>
+            <h2 className='text-center mt-3 mb-3'>ИЗБРАННЫЕ ПРОДУКТЫ</h2>
             <div className="d-flex align-items-center justify-content-center mt-3 mb-4">
                 {promoPhotoes.map(photo => (
                     <div style={{margin:'0 7px'}} key={photo.id}>

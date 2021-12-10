@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './Header.module.scss'
-import shoppingBasket from '../images/shopping-basket.svg'
+import shoppingBasket from '../../assets/images/shopping-basket.svg'
 import { useForm } from 'react-hook-form'
 import { NavBar } from '../NavBar/NavBar'
 import { Link } from 'react-router-dom'
-import { AppContext } from '../context/context'
+import {AppContext} from '../../context/context'
 
 const Header = () => {
     const { cart, data } = React.useContext(AppContext)
@@ -42,14 +42,13 @@ const Header = () => {
                             <span style={{ fontSize: 18 }}>{data.name}</span>
                             <span style={{ fontSize: 18, marginLeft: 10 }}>{data.surname}</span>
                         </div>
-                    </div>
+                    </div>                
                 </div>
             </div>
             <div className={styles["header-middle"]}>
                 <div className="container">
                     <NavBar />
                 </div>
-
             </div>
         </header>
     )

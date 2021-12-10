@@ -1,44 +1,8 @@
-[
-    {
-     "smart": [
-      {
-       "id": 13,
-       "title": "Mi Electric Scooter 3",
-       "images": "https://i01.appmifile.com/webfile/globalimg/chewing/scooter.png",
-       "price": 44990,
-       "color":["Черный", "Серый"],
-       "photo":["https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1634646202.22958510.png"]
-      },
-      {
-       "id": 14,
-       "title": "Mi Smart LED Ceiling Light ",
-       "images": "https://i01.appmifile.com/webfile/globalimg/chewing/450mm.png",
-       "price": 7490
-      },
-      {
-       "id": 15,
-       "title": "Mi Smart Air Fryer 3.5L",
-       "images": "https://i01.appmifile.com/webfile/globalimg/xm_event/ru/280052d1577562b4581d0def0e9492aa.png",
-       "price": 7990
-      },
-      {
-       "id": 16,
-       "title": "Mi Smart Band 6",
-       "images": "http://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1619522961.41276586.png",
-       "price": 3990
-      },
-      {
-       "id": 17,
-       "title": "Mi Ionic Hair Dryer Н300",
-       "images": "https://i02.appmifile.com/441_operator_in/20/10/2021/cf083dc8146734814ccf1615141a8ed0.png",
-       "price": 2690
-      },
-      {
-       "id": 18,
-       "title": "Mi 360° Camera (1080p) ",
-       "images": "https://i01.appmifile.com/webfile/globalimg/Anna/camera.png",
-       "price": 2690
-      }
-     ]
-    }
-   ]
+{
+    "id": 8,
+    "parentId": 8,
+    "title": "Mi LED TV 4A 55 Inch",
+    "images": "https://cdn.ksyru0-fusion.fds.api.mi-img.com/b2c-mishop-pms-ru/pms_1613964089.28348042.png",
+    "price": 45990,
+    "count": 1
+}

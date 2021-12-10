@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DetailsPhone from './components/Details/DetailsPhone';
 import DetailsTv from './components/Details/DetailsTv';
 import DetailsSmart from './components/Details/DetailsSmart';
-import Home from './components/Pages/Home';
-import Cart from './components/Pages/Cart/Cart';
-import { DataProvider } from './components/context/hooks/DataProvider';
+import Home from './pages/Home';
+import Cart from './pages/Cart/Cart';
+import { DataProvider } from './context/data/DataProvider';
 import { Email } from './components/Email/Email';
 
 function App() {

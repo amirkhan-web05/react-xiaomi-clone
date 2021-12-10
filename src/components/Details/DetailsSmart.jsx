@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
-import { AppContext } from '../context/context'
-import logo from '../images/Xiaomi_logo_(2021-).svg.png'
+import {AppContext} from '../../context/context'
+import logo from '../../assets/images/Xiaomi_logo_(2021-).svg.png'
 import Loader from '../Loader/Loader'
 import styles from './Details.module.scss'
 
@@ -15,13 +15,41 @@ const Details = () => {
         return Number(product.parentId) === Number(parentId);
     });
 
+    const [activeTypeColor, setActiveTypeColor] = React.useState(0)
+
     const [loading, setLoading] = React.useState(true)
 
     setTimeout(() => {
         setLoading(false)
     }, 500)
 
-    const [index, setIndex] = React.useState(0)
+    if (details.length) {
+        const avaibleColors = details[0].colors;
+        const avaibleName = details[0].nameArray
+        const avaibleColor = details[0].color
+
+        const detailsSmart = [
+            {
+                id:details[0].id,
+                parentId: details[0].parentId,
+                title:details[0].title,
+                color:details[0].color,
+                colors:details[0].colors,
+                images:details[0].images,
+                nameArray:details[0].nameArray,
+                price:details[0].price,
+                count:details[0].count,
+                cost:details[0].cost,
+                typeColors: details[0].typeColors ? avaibleColors[activeTypeColor] : null,
+                typeName: details[0].typeName ? avaibleName[activeTypeColor] : null,
+                typeColor: details[0].typeColor ? avaibleColor[activeTypeColor] : null
+            }
+        ]
+
+        const categoryColor = (index) => {
+            setActiveTypeColor(index)
+        }
+    
 
     return (
         <div>
@@ -35,16 +63,16 @@ const Details = () => {
             </div>
             <hr style={{height:2, backgroundColor:'#690000'}} />
             <div className="container">
-            {details.map(item => (
-                <div className='d-flex justify-content-center'>
+            {detailsSmart && detailsSmart.map(item => (
+                <div key={item.id} className='d-flex justify-content-center'>
                     {loading ? <Loader/> 
                     :  
                     <div>
-                        {item.photo ? <img width={690} src={item.photo[index]} alt="" /> : <img width={690} src={item.images} alt="" />}
+                        {avaibleColors ? <img width={690} src={avaibleColors[activeTypeColor]} alt="" /> : <img width={690} src={item.images} alt="" />}
                     </div>}
                     <div style={{paddingTop:200}} className={styles.details_content}>
                         <div>
-                            {item.nameArray ? <h2 className={styles.details_content_title}>{item.nameArray[index]}</h2> : <h2 className={styles.details_content_title}>{item.title}</h2>}
+                            {avaibleName ? <h2 className={styles.details_content_title}>{avaibleName[activeTypeColor]}</h2> : <h2 className={styles.details_content_title}>{item.title}</h2>}
                         </div>
                         <p className={styles.details_price}>{item.price.toLocaleString("en-de")}₽</p>
                         <div style={{borderBottom:'1px solid #ccc'}} className='d-flex align-items-center mt-3 pb-3'>
@@ -54,14 +82,16 @@ const Details = () => {
                             </div>
                             <div className={styles.details_bonuce}>Получите в два раза больше Mi баллов за покупку этого товара.</div>  
                         </div>
-                        {item.color && <div className="d-flex align-items-center mt-3">
-                            {item.color.map((color, index) => (
-                                <button className={styles.btn_smart} style={{padding:'10px 55px', marginRight:'20px'}} onClick={() => setIndex(index)}>
-                                    {/* <span className={styles.btn_radius}></span> */}
+                        <div className="d-flex align-items-center mt-3">
+                            {avaibleColor && avaibleColor.map((color, index) => (
+                                <button 
+                                    className={activeTypeColor === index ? styles.btn_active : styles.btn_smart} 
+                                    style={{padding:'10px 55px', marginRight:'20px'}} 
+                                    onClick={() => categoryColor(index)}>
                                     {color}
                                 </button>
                             ))}
-                        </div>}
+                        </div>
                         <Link to={`/cart/${item.id}`}>
                             <button onClick={() => addCartSmart(item)} style={{marginTop:'20px'}} className={styles.details_btn}>Купить</button>
                         </Link>
@@ -70,7 +100,8 @@ const Details = () => {
             ))}
             </div>
         </div>
-    )
+        )
+    }
 }
 
 export default Details
