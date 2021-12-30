@@ -7,7 +7,7 @@ import { MySelect } from '../Select/MySelect'
 const Categories = ['Телефоны', 'Mi TV', 'Умные устройства']
 
 const Devices = () => {
-    const {phones, setPhones, mitv, smart, setSmart, setMitv} = React.useContext(AppContext)
+    const {phones, setPhones, miTv, smart, setSmart, setMiTv} = React.useContext(AppContext)
 
     const [toggle, setToggle] = React.useState(0)
     const [selected, setSelected] = React.useState('')
@@ -22,11 +22,11 @@ const Devices = () => {
             case 'title': 
                 return setPhones([...phones].sort((a, b) => a[sort].localeCompare(b[sort]))) || 
                        setSmart([...smart].sort((a, b) => a[sort].localeCompare(b[sort]))) ||
-                       setMitv([...mitv].sort((a, b) => a[sort].localeCompare(b[sort]))) 
+                       setMiTv([...miTv].sort((a, b) => a[sort].localeCompare(b[sort])))
             case 'price': 
                 return setPhones([...phones].sort((a, b) => parseFloat(a.price) - parseFloat(b.price))) || 
-                       setSmart([...smart].sort((a, b) => parseFloat(a.price) - parseFloat(b.price))) || 
-                       setMitv([...mitv].sort((a, b) => parseFloat(a.price) - parseFloat(b.price)))   
+                       setSmart([...smart].sort((a, b) => parseFloat(a.price) - parseFloat(b.price))) ||
+                       setMiTv([...miTv].sort((a, b) => parseFloat(a.price) - parseFloat(b.price)))
             default: 
                 return sort
         }
@@ -60,7 +60,7 @@ const Devices = () => {
                     ))}
                 </div>
                 <div className={toggle === 1 ? styles.active_content : styles.no_content}>
-                    {mitv.map((item) => (
+                    {miTv.map((item) => (
                         <Link key={item.id} to={`/devicestv/${item.parentId}`} className={styles.phones_item}>
                             <img width={200} height={200} src={item.images} alt="" />
                             <h4>{item.title}</h4>

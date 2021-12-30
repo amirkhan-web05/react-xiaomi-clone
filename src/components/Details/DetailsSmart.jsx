@@ -40,11 +40,13 @@ const Details = () => {
                 price:details[0].price,
                 count:details[0].count,
                 cost:details[0].cost,
-                typeColors: details[0].typeColors ? avaibleColors[activeTypeColor] : null,
-                typeName: details[0].typeName ? avaibleName[activeTypeColor] : null,
+                typeColors: details[0].colors ? avaibleColors[activeTypeColor] : null,
+                typeName: details[0].nameArray ? avaibleName[activeTypeColor] : null,
                 typeColor: details[0].typeColor ? avaibleColor[activeTypeColor] : null
             }
         ]
+
+        console.log(detailsSmart)
 
         const categoryColor = (index) => {
             setActiveTypeColor(index)

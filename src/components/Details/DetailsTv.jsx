@@ -9,9 +9,9 @@ import styles from './Details.module.scss'
 const Details = () => {
     const {parentId} = useParams()
 
-    const {addCartMiTv, mitv} = React.useContext(AppContext)
+    const {addCartMiTv, miTv} = React.useContext(AppContext)
 
-    const details = mitv.filter((product) => {
+    const details = miTv.filter((product) => {
         return Number(product.parentId) === Number(parentId);
     });
 

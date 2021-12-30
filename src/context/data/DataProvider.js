@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React from 'react';
 import { AppContext } from '../context';
+import {getCartDevices, getData, getRemove} from "../../api/api";
 
 export const DataProvider = ({ children }) => {
   const [phones, setPhones] = React.useState([]);
   const [miDesk, setMiDesk] = React.useState([]);
-  const [mitv, setMitv] = React.useState([]);
+  const [miTv, setMiTv] = React.useState([]);
   const [cart, setCart] = React.useState([]);
   const [smart, setSmart] = React.useState([]);
   const [modal, setModal] = React.useState(false);
@@ -15,16 +16,12 @@ export const DataProvider = ({ children }) => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const [phonesRes, mitvRes, smartRes, cartRes] = await Promise.all([
-          await axios.get('https://617d57bb1eadc50017136486.mockapi.io/phones'),
-          await axios.get('https://617d57bb1eadc50017136486.mockapi.io/mitv'),
-          await axios.get('https://617d57bb1eadc50017136486.mockapi.io/smart'),
-          await axios.get('https://617d57bb1eadc50017136486.mockapi.io/cart'),
-        ]);
-        setPhones(phonesRes.data);
-        setMitv(mitvRes.data);
-        setSmart(smartRes.data);
-        setCart(cartRes.data);
+        getData().then((data) => {
+            setPhones(data[0].data);
+            setMiTv(data[1].data);
+            setSmart(data[2].data);
+            setCart(data[3].data);
+        })
       } catch (e) {
         console.log('Error:', e);
       }
@@ -41,25 +38,20 @@ export const DataProvider = ({ children }) => {
       if (foundCart) {
         cart.count++;
       } else {
-        const { data } = await axios.post(
-          'https://617d57bb1eadc50017136486.mockapi.io/cart',
-          obj
-        );
-
-        console.log(data);
-
-        setCart((prev) =>
-          prev.map((item) => {
-            if (Number(item.parentId) === Number(data.parentId)) {
-              return {
-                ...item,
-                id: data.id,
-              };
-            }
-            return item;
+          getCartDevices(obj).then((data) => {
+              setCart((prev) =>
+                  prev.map((item) => {
+                      if (Number(item.parentId) === Number(data.parentId)) {
+                          return {
+                              ...item,
+                              id: data.id,
+                          };
+                      }
+                      return item;
+                  })
+              );
+              setCart([...cart, data]);
           })
-        );
-        setCart([...cart, data]);
       }
     } catch (e) {
       alert(e);
@@ -92,25 +84,20 @@ export const DataProvider = ({ children }) => {
       if (foundCart) {
         cart.count++;
       } else {
-        const { data } = await axios.post(
-          'https://617d57bb1eadc50017136486.mockapi.io/cart',
-          obj
-        );
-
-        console.log(data);
-
-        setCart((prev) =>
-          prev.map((item) => {
-            if (Number(item.parentId) === Number(data.parentId)) {
-              return {
-                ...item,
-                id: data.id,
-              };
-            }
-            return item;
+          getCartDevices(obj).then((data) => {
+              setCart((prev) =>
+                  prev.map((item) => {
+                      if (Number(item.parentId) === Number(data.parentId)) {
+                          return {
+                              ...item,
+                              id: data.id,
+                          };
+                      }
+                      return item;
+                  })
+              );
+              setCart([...cart, data]);
           })
-        );
-        setCart([...cart, data]);
       }
     } catch (e) {
       alert(e);
@@ -125,25 +112,20 @@ export const DataProvider = ({ children }) => {
       if (foundCart) {
         cart.count++;
       } else {
-        const { data } = await axios.post(
-          'https://617d57bb1eadc50017136486.mockapi.io/cart',
-          obj
-        );
-
-        console.log(data);
-
-        setCart((prev) =>
-          prev.map((item) => {
-            if (Number(item.parentId) === Number(data.parentId)) {
-              return {
-                ...item,
-                id: data.id,
-              };
-            }
-            return item;
+          getCartDevices(obj).then((data) => {
+              setCart((prev) =>
+                  prev.map((item) => {
+                      if (Number(item.parentId) === Number(data.parentId)) {
+                          return {
+                              ...item,
+                              id: data.id,
+                          };
+                      }
+                      return item;
+                  })
+              );
+              setCart([...cart, data]);
           })
-        );
-        setCart([...cart, data]);
       }
     } catch (e) {
       alert(e);
@@ -152,15 +134,15 @@ export const DataProvider = ({ children }) => {
 
   const removeItem = async (id) => {
     try {
-      await axios.delete(
-        `https://617d57bb1eadc50017136486.mockapi.io/cart/${id}`
-      );
-      setCart(cart.filter((item) => Number(item.id) !== Number(id)));
-      setShow(false);
+      getRemove(id).then(() => {
+          setCart(cart.filter((item) => Number(item.id) !== Number(id)));
+          setShow(false);
+      })
     } catch (e) {
       alert(e);
     }
   };
+
   const clearCart = () => {
     if (window.confirm('Очистить полностью корзину?')) {
       setCart([]);
@@ -189,9 +171,9 @@ export const DataProvider = ({ children }) => {
         loader,
         setPhones,
         miDesk,
-        mitv,
+        miTv,
         handleChangeModal,
-        setMitv,
+        setMiTv,
         modal,
         setMiDesk,
         setLoader,
