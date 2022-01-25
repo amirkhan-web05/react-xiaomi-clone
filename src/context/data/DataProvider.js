@@ -1,7 +1,6 @@
-import axios from 'axios';
 import React from 'react';
 import { AppContext } from '../context';
-import {getCartDevices, getData, getRemove} from "../../api/api";
+import { getCartDevices, getData, getRemove } from '../../api/api';
 
 export const DataProvider = ({ children }) => {
   const [phones, setPhones] = React.useState([]);
@@ -17,11 +16,11 @@ export const DataProvider = ({ children }) => {
     const fetchData = async () => {
       try {
         getData().then((data) => {
-            setPhones(data[0].data);
-            setMiTv(data[1].data);
-            setSmart(data[2].data);
-            setCart(data[3].data);
-        })
+          setPhones(data[0].data);
+          setMiTv(data[1].data);
+          setSmart(data[2].data);
+          setCart(data[3].data);
+        });
       } catch (e) {
         console.log('Error:', e);
       }
@@ -38,20 +37,20 @@ export const DataProvider = ({ children }) => {
       if (foundCart) {
         cart.count++;
       } else {
-          getCartDevices(obj).then((data) => {
-              setCart((prev) =>
-                  prev.map((item) => {
-                      if (Number(item.parentId) === Number(data.parentId)) {
-                          return {
-                              ...item,
-                              id: data.id,
-                          };
-                      }
-                      return item;
-                  })
-              );
-              setCart([...cart, data]);
-          })
+        getCartDevices(obj).then((data) => {
+          setCart((prev) =>
+            prev.map((item) => {
+              if (Number(item.parentId) === Number(data.parentId)) {
+                return {
+                  ...item,
+                  id: data.id,
+                };
+              }
+              return item;
+            })
+          );
+          setCart([...cart, data]);
+        });
       }
     } catch (e) {
       alert(e);
@@ -84,20 +83,20 @@ export const DataProvider = ({ children }) => {
       if (foundCart) {
         cart.count++;
       } else {
-          getCartDevices(obj).then((data) => {
-              setCart((prev) =>
-                  prev.map((item) => {
-                      if (Number(item.parentId) === Number(data.parentId)) {
-                          return {
-                              ...item,
-                              id: data.id,
-                          };
-                      }
-                      return item;
-                  })
-              );
-              setCart([...cart, data]);
-          })
+        getCartDevices(obj).then((data) => {
+          setCart((prev) =>
+            prev.map((item) => {
+              if (Number(item.parentId) === Number(data.parentId)) {
+                return {
+                  ...item,
+                  id: data.id,
+                };
+              }
+              return item;
+            })
+          );
+          setCart([...cart, data]);
+        });
       }
     } catch (e) {
       alert(e);
@@ -112,20 +111,20 @@ export const DataProvider = ({ children }) => {
       if (foundCart) {
         cart.count++;
       } else {
-          getCartDevices(obj).then((data) => {
-              setCart((prev) =>
-                  prev.map((item) => {
-                      if (Number(item.parentId) === Number(data.parentId)) {
-                          return {
-                              ...item,
-                              id: data.id,
-                          };
-                      }
-                      return item;
-                  })
-              );
-              setCart([...cart, data]);
-          })
+        getCartDevices(obj).then((data) => {
+          setCart((prev) =>
+            prev.map((item) => {
+              if (Number(item.parentId) === Number(data.parentId)) {
+                return {
+                  ...item,
+                  id: data.id,
+                };
+              }
+              return item;
+            })
+          );
+          setCart([...cart, data]);
+        });
       }
     } catch (e) {
       alert(e);
@@ -135,9 +134,9 @@ export const DataProvider = ({ children }) => {
   const removeItem = async (id) => {
     try {
       getRemove(id).then(() => {
-          setCart(cart.filter((item) => Number(item.id) !== Number(id)));
-          setShow(false);
-      })
+        setCart(cart.filter((item) => Number(item.id) !== Number(id)));
+        setShow(false);
+      });
     } catch (e) {
       alert(e);
     }
